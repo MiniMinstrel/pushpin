@@ -2,7 +2,9 @@
 
 :root {
   --color-white: #ffffff;
-  --color-orange: #ffa806;
+  --color-black: #17181f;
+  --color-yellow: #F1C40F;
+  --color-red: #E74C3C;
 }
 
 * {
@@ -16,13 +18,51 @@ html {
 }
 
 body {
-  padding: 0 1.3rem;
+  background-color: var(--color-white);
 }
 
 button {
-  background-color: var(--color-orange);
+  background-color: var(--color-yellow);
   color: var(--color-white);
   padding: 1rem;
   border: none;
   border-radius: 1rem;
+}
+
+/* ========================================= */
+/*                    Navbar                 */
+/* ========================================= */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-black);
+  z-index: 100;
+  position: fixed;
+  width: 100vw;
+}
+
+nav input[type='text'] {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-black);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  max-width: 12rem;
+}
+
+::placeholder {
+  color: var(--color-black);
+}
+
+/* ========================================= */
+/*                    Main                   */
+/* ========================================= */
+main {
+  padding: 6rem 1.25rem 0;
 }
