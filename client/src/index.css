@@ -15,6 +15,7 @@
 
 html {
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
 button {
   background-color: var(--color-red);
   color: var(--color-white);
-  padding: 1rem;
+  padding: 1.1rem 1rem;
   border: none;
   border-radius: 1rem;
 }
@@ -72,4 +73,28 @@ nav input[type='text'] {
 /* ========================================= */
 main {
   padding: 6rem 1.25rem 0;
+}
+
+/* ========================================= */
+/*                    Login                  */
+/* ========================================= */
+#login {
+  text-align: center;
+}
+
+#login h1 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+} 
+
+#login button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10rem;
+  margin: 1rem auto 0;
 }
