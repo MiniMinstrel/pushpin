@@ -70,6 +70,16 @@ nav input[type='text'] {
   font-weight: bold;
 }
 
+#logout-button {
+  border-radius: 10rem;
+  font-weight: bold;
+  padding: 1rem 1.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ========================================= */
 /*                    Main                   */
 /* ========================================= */
