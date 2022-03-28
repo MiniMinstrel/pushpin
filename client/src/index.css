@@ -4,6 +4,7 @@
   --color-white: #ffffff;
   --color-black: #17181f;
   --color-red: #E74C3C;
+  --color-red-dark: #c44234;
 }
 
 * {
@@ -22,10 +23,16 @@ button {
   color: var(--color-white);
   padding: 1.1rem 1rem;
   border: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .red {
   color: var(--color-red);
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-red);
 }
 
 /* ========================================= */
@@ -64,6 +71,7 @@ nav input[type='text'] {
   height: 3rem;
   border-radius: 10rem;
   border: solid var(--color-white) 3px;
+  transition: all 0.3s ease-in-out;
 }
 
 #profile-popup-modal {
@@ -128,6 +136,16 @@ main {
 @media (min-width: 600px) {
 
   /* Turn on hover effects */ 
+  button:hover {
+    transform: translateY(-4px);
+    background-color: var(--color-red-dark);
+    cursor: pointer;
+  }
+
+  #navbar-profile:hover {
+    border-color: var(--color-red);
+    cursor: pointer;
+  }
 
   nav input[type='text'] {
     width: 15rem;
