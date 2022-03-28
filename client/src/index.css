@@ -22,7 +22,7 @@ body {
 }
 
 button {
-  background-color: var(--color-yellow);
+  background-color: var(--color-red);
   color: var(--color-white);
   padding: 1rem;
   border: none;
@@ -58,6 +58,13 @@ nav input[type='text'] {
 
 ::placeholder {
   color: var(--color-black);
+}
+
+#navbar-profile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  border: solid var(--color-white) 3px;
 }
 
 /* ========================================= */
