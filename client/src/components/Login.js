@@ -1,4 +1,4 @@
-git aimport { FaThumbtack, FaGoogle } from 'react-icons/fa';
+import { FaThumbtack, FaGoogle } from 'react-icons/fa';
 import { signUserInWithGooglePopup } from '../firebase/firebase-auth';
 
 const Login = () => {

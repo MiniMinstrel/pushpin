@@ -13,12 +13,8 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-}
-
 body {
+  font-family: 'Poppins', sans-serif !important;
   background-color: var(--color-white);
 }
 
@@ -85,6 +81,7 @@ main {
 #login h1 {
   font-size: 1.7rem;
   margin-bottom: 1rem;
+  font-weight: bold;
 } 
 
 #login button {
