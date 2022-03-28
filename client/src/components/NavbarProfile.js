@@ -1,10 +1,11 @@
-const NavbarProfile = ({ user }) => {
+const NavbarProfile = ({ user, onClickFunc }) => {
   return (
     <img
       id='navbar-profile'
       src={user.photoURL}
       alt='User profile'
-      referrerpolicy='no-referrer'
+      referrerPolicy='no-referrer'
+      onClick={onClickFunc}
     />
   );
 };

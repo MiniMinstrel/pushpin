@@ -3,7 +3,6 @@
 :root {
   --color-white: #ffffff;
   --color-black: #17181f;
-  --color-yellow: #F1C40F;
   --color-red: #E74C3C;
 }
 
@@ -23,7 +22,10 @@ button {
   color: var(--color-white);
   padding: 1.1rem 1rem;
   border: none;
-  border-radius: 1rem;
+}
+
+.red {
+  color: var(--color-red);
 }
 
 /* ========================================= */
@@ -62,6 +64,10 @@ nav input[type='text'] {
   height: 3rem;
   border-radius: 10rem;
   border: solid var(--color-white) 3px;
+}
+
+#profile-popup-modal {
+  font-weight: bold;
 }
 
 /* ========================================= */

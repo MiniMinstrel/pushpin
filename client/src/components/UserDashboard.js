@@ -5,7 +5,7 @@ const UserDashboard = ({ user }) => {
     <>
       <p>Display name: {user.displayName}</p>
       <p>Email: {user.email}</p>
-      <img src={user.photoURL} alt='user pic' referrerpolicy='no-referrer' />
+      <img src={user.photoURL} alt='user pic' referrerPolicy='no-referrer' />
       <p>UID: {user.uid}</p>
 
       <button onClick={signUserOut}>Sign out</button>
