@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #17181f;
+  --color-red: #E74C3C;
+  --color-red-dark: #c44234;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: var(--color-white);
+}
+
+button {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 1.1rem 1rem;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.red {
+  color: var(--color-red);
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-red);
+}
+
+/* ========================================= */
+/*                    Navbar                 */
+/* ========================================= */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-black);
+  z-index: 100;
+  position: fixed;
+  width: 100vw;
+}
+
+nav input[type='text'] {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-black);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  width: 12rem;
+}
+
+::placeholder {
+  color: var(--color-black);
+}
+
+#navbar-profile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  border: solid var(--color-white) 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+#profile-popup-modal {
+  font-weight: bold;
+}
+
+#logout-button {
+  border-radius: 10rem;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================= */
+/*                    Main                   */
+/* ========================================= */
+main {
+  padding: 6rem 1.25rem 0;
+}
+
+/* ========================================= */
+/*                    Login                  */
+/* ========================================= */
+#login {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#login h1 {
+  font-size: 1.7rem;
+  margin-bottom: 1.3rem;
+  font-weight: bold;
+} 
+
+#login button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10rem;
+  margin: 1.3rem auto 0;
+}
+
+/* ========================================= */
+/*                    Login                  */
+/* ========================================= */
+#dashboard {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ========================================= */
+/*               Media Queries               */
+/* ========================================= */
+@media (min-width: 600px) {
+
+  /* Turn on hover effects */ 
+  button:hover {
+    transform: translateY(-4px);
+    background-color: var(--color-red-dark);
+    cursor: pointer;
+  }
+
+  #navbar-profile:hover {
+    border-color: var(--color-red);
+    cursor: pointer;
+  }
+
+  nav input[type='text'] {
+    width: 15rem;
+  }
+  
+  #dashboard {
+    font-size: 1.4rem;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  nav input[type='text'] {
+    width: 25rem;
+  }
 }
