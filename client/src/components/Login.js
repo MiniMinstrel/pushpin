@@ -5,8 +5,8 @@ const Login = () => {
   return (
     <div id='login'>
       <h1>Push Pin - Your Virtual Bulletin Board</h1>
-      <FaThumbtack
-        style={{ width: '7rem', height: '7rem', color: 'var(--color-black)' }}
+      <img src={require('../img/logo.png')}
+      style={{ width: '10rem', height: '10rem'}}
       />
       <button onClick={signUserInWithGooglePopup}>
         <FaGoogle

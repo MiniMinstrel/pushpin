@@ -16,8 +16,8 @@ const Navbar = ({ user }) => {
   return (
     <>
       <nav>
-        <FaThumbtack
-          style={{ width: '2rem', height: '2rem', color: 'var(--color-red)' }}
+        <img src={require('../img/logo.png')}
+        style={{ width: '4rem', height: '4rem'}}
         />
         <input type='text' placeholder='search boards...' />
         {user && <NavbarProfile user={user} onClickFunc={handleShow} />}

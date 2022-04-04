@@ -1,3 +1,5 @@
+import Navbar from './/Navbar';
+
 const UserDashboard = ({ user }) => {
   return (
     <div id='dashboard'>
