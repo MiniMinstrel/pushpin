@@ -108,7 +108,7 @@ main {
   font-size: 1.7rem;
   margin-bottom: 1.3rem;
   font-weight: bold;
-} 
+}
 
 #login button {
   display: flex;
@@ -135,7 +135,7 @@ main {
 /* ========================================= */
 @media (min-width: 600px) {
 
-  /* Turn on hover effects */ 
+  /* Turn on hover effects */
   button:hover {
     transform: translateY(-4px);
     background-color: var(--color-red-dark);
@@ -150,7 +150,7 @@ main {
   nav input[type='text'] {
     width: 15rem;
   }
-  
+
   #dashboard {
     font-size: 1.4rem;
   }

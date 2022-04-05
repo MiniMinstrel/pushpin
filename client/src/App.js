@@ -10,8 +10,9 @@ function App() {
 
   return (
     <>
-      <Navbar user={user} />
-      <main>{user ? <UserDashboard user={user} /> : <Login />}</main>
+      {user && <Navbar user={user} />}
+      <main>
+      {user ? <UserDashboard user={user} /> : <Login />}</main>
     </>
   );
 }
