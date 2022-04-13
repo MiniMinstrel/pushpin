@@ -6,6 +6,7 @@ import {
   addDoc,
   deleteDoc,
   getDocs,
+  getDoc,
   query,
   where,
 } from 'firebase/firestore';
@@ -53,6 +54,26 @@ const deleteBoard = async (boardId) => {
   }
 };
 
+const getBoard = async (boardId) => {
+  const boardRef = doc(db, `boards/${boardId}`);
+  const board = await getDoc(boardRef);
+
+  let boardObj = {
+    boardId: boardId,
+    ...board.data(),
+    posts: [],
+  };
+
+  const postsRef = collection(db, `boards/${boardId}/posts`);
+  const postsRes = await getDocs(postsRef);
+
+  postsRes.forEach((post) => {
+    boardObj.posts.push({ postId: post.id, ...post.data() });
+  });
+
+  return boardObj;
+};
+
 const getBoardsByOwnerId = async (ownerId) => {
   let boardsList = [];
   const q = query(boardsCollectionRef, where('ownerId', '==', ownerId));
@@ -60,19 +81,7 @@ const getBoardsByOwnerId = async (ownerId) => {
 
   // extracting posts
   boardsRes.forEach(async (board) => {
-    let boardObj = {
-      boardId: board.id,
-      ...board.data(),
-      posts: [],
-    };
-
-    const postsRef = collection(db, `boards/${board.id}/posts`);
-    const postsRes = await getDocs(postsRef);
-
-    postsRes.forEach((post) => {
-      boardObj.posts.push({ postId: post.id, ...post.data() });
-    });
-
+    let boardObj = await getBoard(board.id);
     boardsList.push(boardObj);
   });
 
@@ -86,7 +95,15 @@ const deleteAllBoards = async () => {
 
   boardsRes.forEach((board) => {
     deleteBoard(board.id);
-  })
-}
+  });
+};
 
-export { createBoard, createPost, deletePost, deleteBoard, getBoardsByOwnerId, deleteAllBoards };
+export {
+  createBoard,
+  createPost,
+  deletePost,
+  deleteBoard,
+  getBoard,
+  getBoardsByOwnerId,
+  deleteAllBoards,
+};
