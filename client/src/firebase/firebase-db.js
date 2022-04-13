@@ -20,8 +20,7 @@ const createBoard = async (ownerName, ownerId, name) => {
     name: name,
   });
 
-  console.log(board);
-  return board;
+  return board.id;
 };
 
 const createPost = (boardId, name, description) => {
@@ -80,4 +79,14 @@ const getBoardsByOwnerId = async (ownerId) => {
   return boardsList;
 };
 
-export { createBoard, createPost, deletePost, deleteBoard, getBoardsByOwnerId };
+const deleteAllBoards = async () => {
+  const boardsRes = await getDocs(boardsCollectionRef);
+
+  console.log(boardsRes);
+
+  boardsRes.forEach((board) => {
+    deleteBoard(board.id);
+  })
+}
+
+export { createBoard, createPost, deletePost, deleteBoard, getBoardsByOwnerId, deleteAllBoards };
