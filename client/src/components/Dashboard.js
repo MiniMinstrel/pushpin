@@ -1,6 +1,12 @@
 import { Navigate } from 'react-router-dom';
-
-import { createBoard, createPost, deletePost, deleteBoard, getAllBoards } from '../firebase/firebase-db';
+import {
+  createBoard,
+  createPost,
+  deletePost,
+  deleteBoard,
+  getAllBoards,
+  getBoardsByOwnerId,
+} from '../firebase/firebase-db';
 
 const Dashboard = ({ user }) => {
   // go to login if user not logged in
@@ -20,6 +26,9 @@ const Dashboard = ({ user }) => {
       {/* <button onClick={() => deleteBoard('JZ33HLRPwYpLn4MP87iC')}>Delete da new board</button> */}
       {/* <button onClick={() => getAllBoards()}>Print all boards</button> */}
 
+      <button onClick={() => getBoardsByOwnerId(user.uid)}>
+        Get all da boards fo you!
+      </button>
     </div>
   );
 };

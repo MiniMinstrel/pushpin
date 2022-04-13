@@ -5,17 +5,16 @@ import {
   doc,
   addDoc,
   deleteDoc,
-  getDoc,
   getDocs,
   query,
   where,
 } from 'firebase/firestore';
 
 const db = getFirestore(firebaseApp);
-const boardCollectionRef = collection(db, 'boards');
+const boardsCollectionRef = collection(db, 'boards');
 
 const createBoard = (owner, name) => {
-  addDoc(boardCollectionRef, {
+  addDoc(boardsCollectionRef, {
     name: name,
     ownerName: owner.displayName,
     ownerId: owner.uid,
@@ -52,4 +51,12 @@ const deleteBoard = async (boardId) => {
   }
 };
 
-export { createBoard, createPost, deletePost, deleteBoard };
+const getBoardsByOwnerId = async (ownerId) => {
+  const query = query(boardsCollectionRef, where('ownerId', '===', ownerId));
+  const boardsRes = await getDocs(query);
+  boardsRes.forEach((board) => {
+    console.log(board.data());
+  });
+};
+
+export { createBoard, createPost, deletePost, deleteBoard, getBoardsByOwnerId };
