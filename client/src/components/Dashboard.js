@@ -1,4 +1,9 @@
-const UserDashboard = ({ user }) => {
+import { Navigate } from 'react-router-dom';
+
+const Dashboard = ({ user }) => {
+  // go to login if user not logged in
+  if (!user) return <Navigate to='/' replace={true} />;
+
   return (
     <div id='dashboard'>
       <p>
@@ -10,4 +15,4 @@ const UserDashboard = ({ user }) => {
   );
 };
 
-export default UserDashboard;
+export default Dashboard;
