@@ -13,12 +13,15 @@ import {
 const db = getFirestore(firebaseApp);
 const boardsCollectionRef = collection(db, 'boards');
 
-const createBoard = (ownerName, ownerId, name) => {
-  addDoc(boardsCollectionRef, {
+const createBoard = async (ownerName, ownerId, name) => {
+  const board = await addDoc(boardsCollectionRef, {
     ownerName: ownerName,
     ownerId: ownerId,
     name: name,
   });
+
+  console.log(board);
+  return board;
 };
 
 const createPost = (boardId, name, description) => {
