@@ -15,7 +15,7 @@ const Dashboard = ({ user }) => {
       </p>
 
       <button onClick={() => createBoard(user.displayName, user.uid, 'some cool name')}>Create da new board</button>
-      {/* <button onClick={() => createPost('JZ33HLRPwYpLn4MP87iC', 'post name again', 'super nice description test')}>Create da new post</button> */}
+      <button onClick={() => createPost('oGYWP25CfTEYDuASqBdW', 'post name again', 'super nice description test')}>Create da new post</button>
       {/* <button onClick={() => deletePost('eFERHG4VCwuzsvBHap7f', '5nOXSxohIWhC9wMTOnqT')}>Delete da new post</button> */}
       {/* <button onClick={() => deleteBoard('JZ33HLRPwYpLn4MP87iC')}>Delete da new board</button> */}
       {/* <button onClick={() => getAllBoards()}>Print all boards</button> */}
