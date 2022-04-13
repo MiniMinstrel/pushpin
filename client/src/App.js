@@ -11,8 +11,7 @@ function App() {
   return (
     <>
       {user && <Navbar user={user} />}
-      <main>
-      {user ? <UserDashboard user={user} /> : <Login />}</main>
+      <main>{user ? <UserDashboard user={user} /> : <Login />}</main>
     </>
   );
 }

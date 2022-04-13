@@ -3,8 +3,10 @@
 :root {
   --color-white: #ffffff;
   --color-black: #17181f;
-  --color-red: #E74C3C;
-  --color-red-dark: #c44234;
+  /* --color-orange: #E74C3C; */
+  /* --color-orange-dark: #c44234; */
+  --color-orange: #e38c64;
+  --color-orange-dark: #c47957;
 }
 
 * {
@@ -19,20 +21,20 @@ body {
 }
 
 button {
-  background-color: var(--color-red);
+  background-color: var(--color-orange);
   color: var(--color-white);
   padding: 1.1rem 1rem;
   border: none;
   transition: all 0.3s ease-in-out;
 }
 
-.red {
-  color: var(--color-red);
+.orange {
+  color: var(--color-orange);
 }
 
 ::selection {
   color: var(--color-white);
-  background-color: var(--color-red);
+  background-color: var(--color-orange);
 }
 
 /* ========================================= */
@@ -62,6 +64,11 @@ nav input[type='text'] {
   width: 12rem;
 }
 
+nav input[type='text']:focus {
+  /* outline: none; */
+  outline: solid 0.2rem var(--color-orange);
+}
+
 ::placeholder {
   color: var(--color-black);
 }
@@ -70,7 +77,7 @@ nav input[type='text'] {
   width: 3rem;
   height: 3rem;
   border-radius: 10rem;
-  border: solid var(--color-white) 3px;
+  border: solid var(--color-white) 3.5px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -138,12 +145,12 @@ main {
   /* Turn on hover effects */
   button:hover {
     transform: translateY(-4px);
-    background-color: var(--color-red-dark);
+    background-color: var(--color-orange-dark);
     cursor: pointer;
   }
 
   #navbar-profile:hover {
-    border-color: var(--color-red);
+    border-color: var(--color-orange);
     cursor: pointer;
   }
 
