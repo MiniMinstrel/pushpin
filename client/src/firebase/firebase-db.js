@@ -13,11 +13,11 @@ import {
 const db = getFirestore(firebaseApp);
 const boardsCollectionRef = collection(db, 'boards');
 
-const createBoard = (owner, name) => {
+const createBoard = (ownerName, ownerId, name) => {
   addDoc(boardsCollectionRef, {
+    ownerName: ownerName,
+    ownerId: ownerId,
     name: name,
-    ownerName: owner.displayName,
-    ownerId: owner.uid,
   });
 };
 
@@ -52,11 +52,10 @@ const deleteBoard = async (boardId) => {
 };
 
 const getBoardsByOwnerId = async (ownerId) => {
-  const query = query(boardsCollectionRef, where('ownerId', '===', ownerId));
-  const boardsRes = await getDocs(query);
-  boardsRes.forEach((board) => {
-    console.log(board.data());
-  });
+  const q = query(boardsCollectionRef, where('ownerId', '==', ownerId));
+  const boardsRes = await getDocs(q);
+
+  boardsRes.forEach((board) => console.log(board.data()));
 };
 
 export { createBoard, createPost, deletePost, deleteBoard, getBoardsByOwnerId };
