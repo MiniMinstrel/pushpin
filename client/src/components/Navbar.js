@@ -25,10 +25,9 @@ const Navbar = ({ user }) => {
           alt="Push Pin"
         />
         <input type='text' placeholder='search boards...' />
-        {user && <NavbarProfile user={user} onClickFunc={handleShow} />}
+        <NavbarProfile user={user} onClickFunc={handleShow} />
       </nav>
 
-      {user && (
         <Modal
           id='profile-popup-modal'
           show={showProfilePopup}
@@ -62,7 +61,6 @@ const Navbar = ({ user }) => {
             </button>
           </Modal.Footer>
         </Modal>
-      )}
     </>
   );
 };
