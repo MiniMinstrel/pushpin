@@ -16,7 +16,11 @@ const CreateBoardButton = ({ user }) => {
 
   return (
     <>
-      <div id='create-board-button' onClick={handleShow}>
+      <div
+        id='create-board-button'
+        className='dashboard-button'
+        onClick={handleShow}
+      >
         <FaPlus />
         New Board
       </div>
