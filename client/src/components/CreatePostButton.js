@@ -3,7 +3,7 @@ import { FaPlus } from 'react-icons/fa';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 
-const CreatePostButton = ({ boardId }) => {
+const CreatePostButton = ({ boardId, onClickFunc }) => {
   const [showModal, setShowModal] = useState(false);
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -16,6 +16,7 @@ const CreatePostButton = ({ boardId }) => {
     nameInput.value = '';
     descriptionInput.value = '';
     handleClose();
+    onClickFunc();
   };
 
   return (
