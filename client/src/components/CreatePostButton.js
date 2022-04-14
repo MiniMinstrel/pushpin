@@ -7,12 +7,12 @@ const CreatePostButton = ({ boardId, onClickFunc }) => {
   const [showModal, setShowModal] = useState(false);
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const nameInput = document.querySelector('#post-name-input');
     const descriptionInput = document.querySelector('#post-description-input');
     const postName = nameInput.value;
     const postDescription = descriptionInput.value;
-    createPost(boardId, postName, postDescription);
+    await createPost(boardId, postName, postDescription);
     nameInput.value = '';
     descriptionInput.value = '';
     handleClose();

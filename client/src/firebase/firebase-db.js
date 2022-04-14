@@ -108,8 +108,6 @@ const getBoardsByOwnerIdNoPosts = async (ownerId) => {
 const deleteAllBoards = async () => {
   const boardsRes = await getDocs(boardsCollectionRef);
 
-  console.log(boardsRes);
-
   boardsRes.forEach((board) => {
     deleteBoard(board.id);
   });
