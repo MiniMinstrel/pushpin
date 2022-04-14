@@ -5,6 +5,7 @@
   --color-black: #17181f;
   --color-orange: #e38c64;
   --color-orange-dark: #c47957;
+  --color-orange-opaque: rgba(227, 140, 100, 0.7);
 }
 
 * {
@@ -137,6 +138,10 @@ main {
 
 #dashboard-boards {
   display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  max-width: 22rem;
+  margin: 0 auto;
 }
 
 .dashboard-button {
@@ -149,7 +154,23 @@ main {
   border-radius: 1rem;
 }
 
+.board-preview-button {
+  background-color: var(--color-orange-opaque);
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.board-preview-button h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.board-preview-button p {
+  font-size: 0.8rem;
+}
+
 #create-board-button {
+  font-size: 1rem;
   gap: 0.7rem;
   background-color: rgba(0, 0, 0, 0.075);
   transition: all 0.3s ease-in-out;
@@ -188,6 +209,11 @@ main {
     border-color: var(--color-orange);
     cursor: pointer;
   }
+  
+  #create-board-button:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
 
   nav input[type='text'] {
     width: 15rem;
@@ -197,11 +223,11 @@ main {
     font-size: 1.4rem;
   }
 
-  #create-board-button:hover {
-    background-color: rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-  }
-
+  #dashboard-boards {
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 33rem;
+  }  
 }
 
 @media (min-width: 1000px) {
@@ -211,5 +237,15 @@ main {
 
   .modal input[type='text'] {
     width: 25rem;
+  }
+
+  #dashboard-boards {
+    max-width: 40rem;
+  }  
+
+  .dashboard-button {
+    width: 12rem;
+    height: 12rem;
+    padding: 1rem;
   }
 }
