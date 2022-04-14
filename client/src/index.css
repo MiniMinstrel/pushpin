@@ -169,7 +169,7 @@ main {
   font-size: 0.8rem;
 }
 
-#create-board-button {
+.create-button {
   font-size: 1rem;
   gap: 0.7rem;
   background-color: rgba(0, 0, 0, 0.075);
@@ -186,6 +186,7 @@ main {
   background-color: var(--color-white);
   border-radius: 0.5rem;
   font-weight: bold;
+  margin: 0.5rem 0;
 }
 
 .modal input[type='text']:focus {
@@ -210,7 +211,7 @@ main {
     cursor: pointer;
   }
   
-  #create-board-button:hover {
+  .create-button:hover {
     background-color: rgba(0, 0, 0, 0.15);
     cursor: pointer;
   }

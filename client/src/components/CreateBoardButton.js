@@ -21,8 +21,7 @@ const CreateBoardButton = ({ user }) => {
   return (
     <>
       <div
-        id='create-board-button'
-        className='dashboard-button'
+        className='create-button dashboard-button'
         onClick={handleShow}
       >
         <FaPlus />
