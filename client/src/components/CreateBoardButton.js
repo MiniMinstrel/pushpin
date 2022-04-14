@@ -2,16 +2,20 @@ import { FaPlus } from 'react-icons/fa';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { createBoard } from '../firebase/firebase-db';
+import { useNavigate } from 'react-router-dom';
 
 const CreateBoardButton = ({ user }) => {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const name = document.querySelector('#new-board-name-input').value;
-    createBoard(user.displayName, user.uid, name);
+    const boardId = await createBoard(user.displayName, user.uid, name);
     document.querySelector('#new-board-name-input').value = '';
     handleClose();
+    navigate(`/boards/${boardId}`);
   };
 
   return (

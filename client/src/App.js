@@ -18,6 +18,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Login user={user} />} />
             <Route path='/dashboard' element={<UserDashboard user={user} />} />
+            <Route path='/boards/:boardId' element={<h1>on the tast</h1>} />
             <Route path='*' element={<Navigate to='/' replace={true} />} />
           </Routes>
         </Router>
