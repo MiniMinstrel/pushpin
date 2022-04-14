@@ -88,6 +88,23 @@ const getBoardsByOwnerId = async (ownerId) => {
   return boardsList;
 };
 
+const getBoardsByOwnerIdNoPosts = async (ownerId) => {
+  let boardsList = [];
+  const q = query(boardsCollectionRef, where('ownerId', '==', ownerId));
+  const boardsRes = await getDocs(q);
+
+  boardsRes.forEach((board) => {
+    const boardObj = {
+      boardId: board.id,
+      ...board.data(),
+    };
+
+    boardsList.push(boardObj);
+  });
+
+  return boardsList;
+};
+
 const deleteAllBoards = async () => {
   const boardsRes = await getDocs(boardsCollectionRef);
 
@@ -105,5 +122,6 @@ export {
   deleteBoard,
   getBoard,
   getBoardsByOwnerId,
+  getBoardsByOwnerIdNoPosts,
   deleteAllBoards,
 };

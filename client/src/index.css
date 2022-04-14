@@ -135,6 +135,10 @@ main {
   text-align: center;
 }
 
+#dashboard-boards {
+  display: grid;
+}
+
 .dashboard-button {
   width: 10rem;
   height: 10rem;
