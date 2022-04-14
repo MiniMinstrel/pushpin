@@ -1,5 +1,4 @@
 import { Navigate } from 'react-router-dom';
-
 import {
   createBoard,
   createPost,
@@ -9,6 +8,7 @@ import {
   getBoardsByOwnerId,
   deleteAllBoards,
 } from '../firebase/firebase-db';
+import CreateUserButton from './CreateBoardButton'
 
 const Dashboard = ({ user }) => {
   // go to login if user not logged in
@@ -22,7 +22,9 @@ const Dashboard = ({ user }) => {
         magic happens!
       </p>
 
-      <button
+      <CreateUserButton user={user} />
+
+      {/* <button
         onClick={() =>
           createBoard(user.displayName, user.uid, 'some cool name')
         }
@@ -42,7 +44,7 @@ const Dashboard = ({ user }) => {
       <button onClick={() => deleteAllBoards()}>Delete all boards</button>
       <button onClick={() => getBoard('Cb5a1GTCcP9j9HKkoLWA')}>
         get da board
-      </button>
+      </button> */}
     </div>
   );
 };

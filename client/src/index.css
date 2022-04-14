@@ -37,6 +37,13 @@ button {
   background-color: var(--color-orange);
 }
 
+::placeholder {
+  color: var(--color-black);
+}
+
+.modal {
+  font-weight: bold;
+}
 /* ========================================= */
 /*                    Navbar                 */
 /* ========================================= */
@@ -68,10 +75,6 @@ nav input[type='text']:focus {
   outline: solid 0.2rem var(--color-orange);
 }
 
-::placeholder {
-  color: var(--color-black);
-}
-
 #navbar-profile {
   width: 3rem;
   height: 3rem;
@@ -80,11 +83,7 @@ nav input[type='text']:focus {
   transition: all 0.3s ease-in-out;
 }
 
-#profile-popup-modal {
-  font-weight: bold;
-}
-
-#logout-button {
+.modal button {
   font-weight: bold;
   font-size: 1rem;
   padding: 0.8rem 1.6rem;
@@ -92,6 +91,7 @@ nav input[type='text']:focus {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 /* ========================================= */
@@ -135,6 +135,36 @@ main {
   text-align: center;
 }
 
+#create-board-button {
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.075);
+  transition: all 0.3s ease-in-out;
+}
+
+.modal input[type='text'] {
+  width: 20rem;
+  border: solid var(--color-black) 0.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-black);
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.modal input[type='text']:focus {
+  outline: none;
+  border-color: var(--color-orange);
+}
+
 /* ========================================= */
 /*               Media Queries               */
 /* ========================================= */
@@ -160,10 +190,19 @@ main {
     font-size: 1.4rem;
   }
 
+  #create-board-button:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+
 }
 
 @media (min-width: 1000px) {
   nav input[type='text'] {
+    width: 25rem;
+  }
+
+  .modal input[type='text'] {
     width: 25rem;
   }
 }
