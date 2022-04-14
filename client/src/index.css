@@ -60,6 +60,11 @@ nav {
   width: 100vw;
 }
 
+nav img {
+  width: 3rem;
+  height: 3rem;
+}
+
 nav input[type='text'] {
   font-family: 'Poppins', sans-serif;
   color: var(--color-black);
@@ -204,6 +209,10 @@ main {
   button:hover {
     transform: translateY(-4px);
     background-color: var(--color-orange-dark);
+    cursor: pointer;
+  }
+
+  nav img:hover {
     cursor: pointer;
   }
 
