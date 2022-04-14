@@ -18,10 +18,9 @@ const Board = ({ user }) => {
 
   const checkUser = async () => {
     const userState = await user;
-    console.log(userState);
-    if (!user) navigate('/')
-  }
-  
+    if (!userState) navigate('/');
+  };
+
   useEffect(() => {
     let isMounted = true;
     fetchBoard().then((res) => {

@@ -17,18 +17,17 @@ function App() {
 
   return (
     <>
-      {user && <Navbar user={user} />}
-
-      <main>
-        <Router>
+      <Router>
+        {user && <Navbar user={user} />}
+        <main>
           <Routes>
             <Route path='/' element={<Login user={user} />} />
             <Route path='/dashboard' element={<UserDashboard user={user} />} />
             <Route path='/boards/:boardId' element={<Board user={user} />} />
             <Route path='*' element={<Navigate to='/' replace={true} />} />
           </Routes>
-        </Router>
-      </main>
+        </main>
+      </Router>
     </>
   );
 }

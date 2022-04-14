@@ -4,8 +4,13 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { signUserOut } from '../firebase/firebase-auth';
 
+import { useNavigate } from 'react-router-dom';
+
 const Navbar = ({ user }) => {
   const [showProfilePopup, setShowProfilePopup] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleShow = () => setShowProfilePopup(true);
   const handleClose = () => setShowProfilePopup(false);
   const handleLogoutClose = () => {
@@ -17,6 +22,7 @@ const Navbar = ({ user }) => {
     <>
       <nav>
         <img
+          onClick={() => navigate('/')}
           src='./logo.png'
           style={{
             width: '3rem',

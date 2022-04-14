@@ -158,6 +158,7 @@ main {
   background-color: var(--color-orange-opaque);
   flex-direction: column;
   gap: 0.2rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .board-preview-button h3 {
@@ -213,6 +214,11 @@ main {
   
   .create-button:hover {
     background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+
+  .board-preview-button:hover {
+    background-color: var(--color-orange);
     cursor: pointer;
   }
 
