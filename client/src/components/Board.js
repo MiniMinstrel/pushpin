@@ -3,14 +3,24 @@ import { useParams } from 'react-router-dom';
 import { getBoard } from '../firebase/firebase-db';
 import CreatePostButton from './CreatePostButton';
 
+import { useNavigate } from 'react-router-dom';
+
 const Board = ({ user }) => {
   const [board, setBoard] = useState({});
   const { boardId } = useParams();
+
+  const navigate = useNavigate();
 
   const fetchBoard = async () => {
     const boardRes = await getBoard(boardId);
     return boardRes;
   };
+
+  const checkUser = async () => {
+    const userState = await user;
+    console.log(userState);
+    if (!user) navigate('/')
+  }
   
   useEffect(() => {
     let isMounted = true;
@@ -18,10 +28,12 @@ const Board = ({ user }) => {
       if (isMounted) setBoard(res);
     });
 
+    checkUser();
+
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [user]);
 
   return (
     <>
