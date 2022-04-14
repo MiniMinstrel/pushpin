@@ -11,9 +11,9 @@ const Board = ({ user }) => {
   const { boardId } = useParams();
   const navigate = useNavigate();
 
-  if (!user) navigate('/');
-
+  
   const fetchBoard = async () => {
+    if (!user) navigate('/');
     if (!user) return;
     const boardRes = await getBoard(boardId);
     setBoard(boardRes);
