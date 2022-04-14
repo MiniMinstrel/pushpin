@@ -8,7 +8,6 @@ const Dashboard = ({ user }) => {
   const [boards, setBoards] = useState([]);
 
   const fetchBoards = async () => {
-    if (!user) return;
     const boardsRes = await getBoardsByOwnerIdNoPosts(user.uid);
     setBoards([...boardsRes]);
   };
