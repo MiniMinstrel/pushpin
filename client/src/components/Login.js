@@ -1,12 +1,18 @@
-import { FaThumbtack, FaGoogle } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 import { signUserInWithGooglePopup } from '../firebase/firebase-auth';
+import { Navigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ user }) => {
+  // go to dashboard if user already logged in
+  if (user) return <Navigate to='/dashboard' replace={true} />;
+
   return (
     <div id='login'>
       <h1>Push Pin - Your Virtual Bulletin Board</h1>
-      <img src={require('../img/logo.png')}
-      style={{ width: '10rem', height: '10rem'}}
+      <img
+        src='./logo.png'
+        style={{ width: '10rem', height: '10rem' }}
+        alt='Push Pin logo'
       />
       <button onClick={signUserInWithGooglePopup}>
         <FaGoogle

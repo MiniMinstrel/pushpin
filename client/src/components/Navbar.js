@@ -1,4 +1,4 @@
-import { FaThumbtack, FaRegArrowAltCircleLeft } from 'react-icons/fa';
+import { FaRegArrowAltCircleLeft } from 'react-icons/fa';
 import NavbarProfile from './NavbarProfile';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
@@ -16,8 +16,13 @@ const Navbar = ({ user }) => {
   return (
     <>
       <nav>
-        <img src={require('../img/logo.png')}
-        style={{ width: '4rem', height: '4rem'}}
+        <img
+          src='./logo.png'
+          style={{
+            width: '3rem',
+            height: '3rem',
+          }}
+          alt="Push Pin"
         />
         <input type='text' placeholder='search boards...' />
         {user && <NavbarProfile user={user} onClickFunc={handleShow} />}
@@ -31,17 +36,17 @@ const Navbar = ({ user }) => {
         >
           <Modal.Header closeButton>
             Logged in as&nbsp;
-            <span className='red'>{user.displayName}</span>
+            <span className='orange'>{user.displayName}</span>
           </Modal.Header>
           <Modal.Body>
             <p>
-              <span className='red'>Name</span> - {user.displayName}
+              <span className='orange'>Name</span> - {user.displayName}
             </p>
             <p>
-              <span className='red'>Email</span> - {user.email}
+              <span className='orange'>Email</span> - {user.email}
             </p>
             <p>
-              <span className='red'>UID</span> - {user.uid}
+              <span className='orange'>UID</span> - {user.uid}
             </p>
           </Modal.Body>
           <Modal.Footer>
