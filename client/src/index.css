@@ -187,7 +187,12 @@ main {
 #board-name {
   text-align: center;
   font-weight: bold;
-  margin: 1rem 0 2rem;
+}
+
+#board-owner {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 #posts-grid {

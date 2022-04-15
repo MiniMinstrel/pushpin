@@ -41,11 +41,20 @@ const Board = ({ user }) => {
   return (
     <>
       <h1 id='board-name'>{board.name}</h1>
+      <p id='board-owner'>
+        By <span className='orange'>{board.ownerName}</span>
+      </p>
+
       <div id='posts-grid'>
-        {board.posts && board.posts.map((post) => {
-          return <Post post={post} key={post.postId} />;
-        })}
-        <CreatePostButton boardId={board.boardId} onClickFunc={updateBoard} />
+        {board.posts &&
+          board.posts.map((post) => {
+            return <Post post={post} key={post.postId} />;
+          })}
+
+        {/* only display if user owns the board */}
+        {user && user.uid === board.ownerId && (
+          <CreatePostButton boardId={board.boardId} onClickFunc={updateBoard} />
+        )}
       </div>
     </>
   );
