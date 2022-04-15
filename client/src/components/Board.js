@@ -40,6 +40,7 @@ const Board = ({ user }) => {
 
   return (
     <>
+      <h1 id='board-name'>{board.name}</h1>
       <div id='posts-grid'>
         {board.posts && board.posts.map((post) => {
           return <Post post={post} key={post.postId} />;
