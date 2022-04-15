@@ -1,11 +1,14 @@
-# 📍 pushpin
-Push Pin - Your Digital Bulletin Board
+# PushPin - Your Digital Bulletin Board
 
-![PushPin Logo](./logo.png)
+<p align="center">
+  <img src="/client/public/logo.png" />
+</p>
 
-PushPin is the digital solution to ensuring teachers, and club organizers can
-properly reach out to students, while eliminating the need to go through a crowded
-physical bulletin board.
+PushPin is the digital solution for teacher and club organizers. Instead of using
+a cluttered and unreliable physical bulletin board, PushPin digitalizes the process
+and provides streamline access to information for students.
+
+This was created as part of a final project for UF's CEN3031 class.
 
 # how to run
 1. clone repository
