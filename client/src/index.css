@@ -147,7 +147,7 @@ main {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
-  max-width: 22rem;
+  width: min-content;
   margin: 0 auto;
 }
 
@@ -190,6 +190,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin: 0 auto;
 }
 
 .post {
@@ -284,7 +285,7 @@ main {
   #dashboard-boards {
     gap: 1.5rem;
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: 33rem;
+    width: min-content;
   }  
 }
 
@@ -298,7 +299,7 @@ main {
   }
 
   #dashboard-boards {
-    max-width: 40rem;
+    width: min-content;
   }  
 
   .dashboard-button {
@@ -311,6 +312,5 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: min-content;
-    margin: 0 auto;
   }
 }
