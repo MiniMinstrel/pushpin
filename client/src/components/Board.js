@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getBoard } from '../firebase/firebase-db';
 import CreatePostButton from './CreatePostButton';
 import { useNavigate } from 'react-router-dom';
+import Post from './Post';
 
 const Board = ({ user }) => {
   const [board, setBoard] = useState({});
@@ -16,7 +17,7 @@ const Board = ({ user }) => {
 
   const updateBoard = async () => {
     const boardRes = await getBoard(boardId);
-    setBoard({...boardRes});
+    setBoard({ ...boardRes });
   };
 
   const checkUser = async () => {
@@ -39,8 +40,12 @@ const Board = ({ user }) => {
 
   return (
     <>
-      <div className='board-page'>{JSON.stringify(board)}</div>
-      <CreatePostButton boardId={board.boardId} onClickFunc={updateBoard} />
+      <div id='posts-grid'>
+        {board.posts && board.posts.map((post) => {
+          return <Post post={post} key={post.postId} />;
+        })}
+        <CreatePostButton boardId={board.boardId} onClickFunc={updateBoard} />
+      </div>
     </>
   );
 };

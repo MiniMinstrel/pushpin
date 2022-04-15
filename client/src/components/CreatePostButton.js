@@ -21,7 +21,7 @@ const CreatePostButton = ({ boardId, onClickFunc }) => {
 
   return (
     <>
-      <div className='create-button dashboard-button' onClick={handleShow}>
+      <div className='create-button post' id='create-post-button' onClick={handleShow}>
         <FaPlus />
         New Post
       </div>
@@ -29,16 +29,18 @@ const CreatePostButton = ({ boardId, onClickFunc }) => {
       <Modal className='modal' show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>Create a New Post</Modal.Header>
         <Modal.Body>
-          <input
-            id='post-name-input'
-            type='text'
-            placeholder='Enter new post name...'
-          />
-          <input
-            id='post-description-input'
-            type='text'
-            placeholder='Enter new post description...'
-          />
+          <div id='create-post-modal-input'>
+            <input
+              id='post-name-input'
+              type='text'
+              placeholder='Enter new post name...'
+            />
+            <input
+              id='post-description-input'
+              type='text'
+              placeholder='Enter new post description...'
+            />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <button onClick={handleSubmit}>
