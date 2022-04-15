@@ -5,6 +5,7 @@ import CreatePostButton from './CreatePostButton';
 import { useNavigate } from 'react-router-dom';
 import Post from './Post';
 import DeleteBoardButton from './DeleteBoardButton';
+import { AiFillEdit } from 'react-icons/ai';
 
 const Board = ({ user }) => {
   const [board, setBoard] = useState({});
@@ -40,11 +41,17 @@ const Board = ({ user }) => {
   }, [user]);
 
   return (
-    <>
+    <div id='board-container'>
       <h1 id='board-name'>{board.name}</h1>
       <p id='board-owner'>
         By <span className='orange'>{board.ownerName}</span>
       </p>
+
+      {user && user.uid === board.ownerId && (
+        <p>
+          You own this board, so feel free to edit! <AiFillEdit />
+        </p>
+      )}
 
       <div id='posts-grid'>
         {board.posts &&
@@ -62,7 +69,7 @@ const Board = ({ user }) => {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

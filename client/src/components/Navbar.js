@@ -19,11 +19,7 @@ const Navbar = ({ user }) => {
   return (
     <>
       <nav>
-        <img
-          onClick={() => navigate('/')}
-          src='./logo.png'
-          alt='Push Pin'
-        />
+        <img onClick={() => navigate('/')} src='./logo.png' alt='Push Pin' />
         <input type='text' placeholder='search boards...' />
         <NavbarProfile user={user} onClickFunc={handleShow} />
       </nav>
@@ -39,9 +35,6 @@ const Navbar = ({ user }) => {
           </p>
           <p>
             <span className='orange'>Email</span> - {user.email}
-          </p>
-          <p>
-            <span className='orange'>UID</span> - {user.uid}
           </p>
         </Modal.Body>
         <Modal.Footer>

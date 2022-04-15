@@ -182,12 +182,12 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
-#board-name {
+#board-container h1 {
   text-align: center;
   font-weight: bold;
 }
 
-#board-owner {
+#board-container p {
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
@@ -210,14 +210,14 @@ main {
   background-color: var(--color-orange-opaque);
 }
 
-.post h3 {
+.post h1 {
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-.post p {
+.post h4 {
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .post-button {
