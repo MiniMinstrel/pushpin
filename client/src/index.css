@@ -8,6 +8,8 @@
   --color-orange-opaque: rgba(227, 140, 100, 0.7);
   --color-grey-opaque: rgba(0, 0, 0, 0.075);
   --color-grey: rgba(0, 0, 0, 0.15);
+  --color-red-opaque: rgba(255, 56, 116, 0.3);
+  --color-red: rgba(255, 56, 116, 0.5);
 }
 
 * {
@@ -164,7 +166,7 @@ main {
 .board-preview-button {
   background-color: var(--color-orange-opaque);
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -173,12 +175,8 @@ main {
   font-size: 1.2rem;
 }
 
-.board-preview-button p {
-  font-size: 0.8rem;
-}
-
 .create-button {
-  font-size: 1rem;
+  font-size: 0.9rem;
   gap: 0.7rem;
   background-color: var(--color-grey-opaque);
   transition: all 0.3s ease-in-out;
@@ -222,7 +220,7 @@ main {
   font-size: 0.8rem;
 }
 
-#create-post-button {
+.post-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -249,16 +247,19 @@ main {
 }
 
 #create-post-modal-input {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+#delete-board-button {
+  background-color: var(--color-red-opaque);
 }
 
 /* ========================================= */
 /*               Media Queries               */
 /* ========================================= */
 @media (min-width: 600px) {
-
   /* Turn on hover effects */
   button:hover {
     transform: translateY(-4px);
@@ -274,14 +275,20 @@ main {
     border-color: var(--color-orange);
     cursor: pointer;
   }
-  
-  .create-button:hover, #create-post-button:hover {
+
+  .create-button:hover,
+  .post-button:hover {
     background-color: var(--color-grey);
     cursor: pointer;
   }
 
   .board-preview-button:hover {
     background-color: var(--color-orange);
+    cursor: pointer;
+  }
+
+  #delete-board-button:hover {
+    background-color: var(--color-red);
     cursor: pointer;
   }
 
@@ -297,7 +304,11 @@ main {
     gap: 1.5rem;
     grid-template-columns: 1fr 1fr 1fr;
     width: min-content;
-  }  
+  }
+
+  .create-button {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -311,12 +322,11 @@ main {
 
   #dashboard-boards {
     width: min-content;
-  }  
+  }
 
   .dashboard-button {
     width: 12rem;
     height: 12rem;
-    padding: 1rem;
   }
 
   #posts-grid {

@@ -21,7 +21,7 @@ const CreatePostButton = ({ boardId, onClickFunc }) => {
 
   return (
     <>
-      <div className='create-button post' id='create-post-button' onClick={handleShow}>
+      <div className='create-button post post-button' onClick={handleShow}>
         <FaPlus />
         New Post
       </div>

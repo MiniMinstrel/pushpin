@@ -11,7 +11,6 @@ const BoardPreviewButton = ({ board }) => {
     >
       <BsFillKanbanFill style={{ width: '2rem', height: '2rem' }} />
       <h3>{board.name}</h3>
-      <p>{board.ownerName}</p>
     </div>
   );
 };

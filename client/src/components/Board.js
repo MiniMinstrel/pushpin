@@ -4,6 +4,7 @@ import { getBoard } from '../firebase/firebase-db';
 import CreatePostButton from './CreatePostButton';
 import { useNavigate } from 'react-router-dom';
 import Post from './Post';
+import DeleteBoardButton from './DeleteBoardButton';
 
 const Board = ({ user }) => {
   const [board, setBoard] = useState({});
@@ -51,9 +52,14 @@ const Board = ({ user }) => {
             return <Post post={post} key={post.postId} />;
           })}
 
-        {/* only display if user owns the board */}
         {user && user.uid === board.ownerId && (
-          <CreatePostButton boardId={board.boardId} onClickFunc={updateBoard} />
+          <>
+            <CreatePostButton
+              boardId={board.boardId}
+              onClickFunc={updateBoard}
+            />
+            <DeleteBoardButton boardId={board.boardId} />
+          </>
         )}
       </div>
     </>
