@@ -7,7 +7,7 @@ const Post = ({ post, user, boardOwnerId, updateBoardFunc }) => {
   return (
     <div className='post'>
       <div id='post-header'>
-        <h1>{post.name}</h1>
+        <h2>{post.name}</h2>
         {user && user.uid === boardOwnerId && (
           <DeletePostButton
             boardId={boardId}
