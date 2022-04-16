@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   background-color: var(--color-white);
 }
 
@@ -70,7 +70,7 @@ nav img {
 }
 
 nav input[type='text'] {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--color-black);
   font-size: 1rem;
   padding: 0.5rem;
@@ -242,9 +242,9 @@ main {
 }
 
 .modal input[type='text'] {
-  width: 25rem;
+  width: 20rem;
   border: solid var(--color-black) 0.2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--color-black);
   font-size: 1rem;
   padding: 0.5rem;
@@ -255,9 +255,9 @@ main {
 
 .modal textarea[type = 'text']
 {
-  width: 25rem;
+  width: 20rem;
   border: solid var(--color-black) 0.2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--color-black);
   font-size: 1rem;
   padding: 0.5rem;
