@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Arial', sans-serif !important;
   background-color: var(--color-white);
 }
 
@@ -70,7 +70,7 @@ nav img {
 }
 
 nav input[type='text'] {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: var(--color-black);
   font-size: 1rem;
   padding: 0.5rem;
@@ -176,8 +176,8 @@ main {
 }
 
 .create-button {
-  font-size: 0.9rem;
-  gap: 0.7rem;
+  font-size: 1.2rem;
+  gap: 0.2rem;
   background-color: var(--color-grey-opaque);
   transition: all 0.3s ease-in-out;
 }
@@ -224,12 +224,12 @@ main {
 
 .post h1 {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .post h4 {
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
 }
 
 .post-button {
@@ -242,9 +242,22 @@ main {
 }
 
 .modal input[type='text'] {
-  width: 20rem;
+  width: 25rem;
   border: solid var(--color-black) 0.2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
+  color: var(--color-black);
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.modal textarea[type = 'text']
+{
+  width: 25rem;
+  border: solid var(--color-black) 0.2rem;
+  font-family: 'Arial', sans-serif;
   color: var(--color-black);
   font-size: 1rem;
   padding: 0.5rem;
