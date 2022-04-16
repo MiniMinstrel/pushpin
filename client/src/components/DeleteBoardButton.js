@@ -7,11 +7,6 @@ import Modal from 'react-bootstrap/Modal';
 const DeleteBoardButton = ({ boardId }) => {
   const navigate = useNavigate();
 
-  const deleteAlert = () => {
-    deleteBoard(boardId);
-    navigate('/dashboard');
-  };
-
   const handleSubmit = async () => {
     await deleteBoard(boardId);
     navigate('/dashboard');
@@ -32,12 +27,12 @@ const DeleteBoardButton = ({ boardId }) => {
       </div>
 
       <Modal className='modal' show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>Are you sure you want to delete this board?</Modal.Header>
-        <Modal.Body>
-          This action can't be undone
-        </Modal.Body>
+        <Modal.Header closeButton>
+          Are you sure you want to delete this board?
+        </Modal.Header>
+        <Modal.Body>This action can't be undone</Modal.Body>
         <Modal.Footer>
-          <button onClick={handleSubmit}>
+          <button className='modal-delete-button' onClick={handleSubmit}>
             <FaTrash />
             Delete
           </button>
