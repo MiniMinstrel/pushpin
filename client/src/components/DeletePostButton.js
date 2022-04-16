@@ -1,21 +1,17 @@
 import { FaTrash } from 'react-icons/fa';
-import { deleteBoard } from '../firebase/firebase-db';
+import { deletePost } from '../firebase/firebase-db';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-const DeleteBoardButton = ({ boardId }) => {
-  const navigate = useNavigate();
+const DeletePostButton = ({ boardId, postId }) => {
 
-  const deleteAlert = () => {
-    deleteBoard(boardId);
-    navigate('/dashboard');
-  };
+const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    await deleteBoard(boardId);
+    await deletePost(boardId, postId);
     navigate('/dashboard');
-  };
+    };
 
   const [showModal, setShowModal] = useState(false);
   const handleShow = () => setShowModal(true);
@@ -24,15 +20,15 @@ const DeleteBoardButton = ({ boardId }) => {
   return (
     <>
       <div
-        className='create-button post post-button'
-        id='delete-board-button'
+        className='create-delete-button'
+        id='delete-post-button'
         onClick={handleShow}
       >
-        <FaTrash /> Delete Board
+        <FaTrash /> Delete
       </div>
 
       <Modal className='modal' show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>Are you sure you want to delete this board?</Modal.Header>
+        <Modal.Header closeButton>Are you sure you want to delete this post?</Modal.Header>
         <Modal.Body>
           This action can't be undone
         </Modal.Body>
@@ -44,7 +40,9 @@ const DeleteBoardButton = ({ boardId }) => {
         </Modal.Footer>
       </Modal>
     </>
+
   );
 };
 
-export default DeleteBoardButton;
+
+export default DeletePostButton;
