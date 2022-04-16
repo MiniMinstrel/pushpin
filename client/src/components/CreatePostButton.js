@@ -35,7 +35,7 @@ const CreatePostButton = ({ boardId, onClickFunc }) => {
               type='text'
               placeholder='Enter new post name...'
             />
-            <input
+            <textarea
               id='post-description-input'
               type='text'
               placeholder='Enter new post description...'
