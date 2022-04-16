@@ -1,16 +1,18 @@
 import DeletePostButton from './DeletePostButton.js';
 import { useParams } from 'react-router-dom';
 
-const Post = ({ post }) => {
-
+const Post = ({ post, user, boardOwnerId }) => {
   const { boardId } = useParams();
 
   return (
     <div className='post'>
-      <h1>{post.name}</h1>
+      <div id='post-header'>
+        <h1>{post.name}</h1>
+        {user && user.uid === boardOwnerId && (
+          <DeletePostButton boardId={boardId} postId={post.postId} />
+        )}
+      </div>
       <h4>{post.description}</h4>
-      <DeletePostButton boardId={boardId} postId={post.postId} />
-
     </div>
   );
 };

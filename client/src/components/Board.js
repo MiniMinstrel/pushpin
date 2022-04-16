@@ -56,7 +56,7 @@ const Board = ({ user }) => {
       <div id='posts-grid'>
         {board.posts &&
           board.posts.map((post) => {
-            return <Post post={post} key={post.postId} />;
+            return <Post post={post} user={user} boardOwnerId={board.ownerId} key={post.postId} />;
           })}
 
         {user && user.uid === board.ownerId && (

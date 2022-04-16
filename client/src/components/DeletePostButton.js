@@ -5,13 +5,12 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 const DeletePostButton = ({ boardId, postId }) => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     await deletePost(boardId, postId);
     navigate('/dashboard');
-    };
+  };
 
   const [showModal, setShowModal] = useState(false);
   const handleShow = () => setShowModal(true);
@@ -19,30 +18,24 @@ const navigate = useNavigate();
 
   return (
     <>
-      <div
-        className='create-delete-button'
-        id='delete-post-button'
-        onClick={handleShow}
-      >
-        <FaTrash /> Delete
+      <div id='delete-post-button' onClick={handleShow}>
+        <FaTrash style={{width: '1.2rem', height: '1.2rem'}}/>
       </div>
 
       <Modal className='modal' show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>Are you sure you want to delete this post?</Modal.Header>
-        <Modal.Body>
-          This action can't be undone
-        </Modal.Body>
+        <Modal.Header closeButton>
+          Are you sure you want to delete this post?
+        </Modal.Header>
+        <Modal.Body>This action can't be undone</Modal.Body>
         <Modal.Footer>
-          <button onClick={handleSubmit}>
+          <button className='modal-delete-button' onClick={handleSubmit}>
             <FaTrash />
             Delete
           </button>
         </Modal.Footer>
       </Modal>
     </>
-
   );
 };
-
 
 export default DeletePostButton;
