@@ -182,6 +182,18 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
+.create-delete-button {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  gap: 0.7rem;
+  background-color: var(--color-grey-opaque);
+  transition: all 0.3s ease-in-out;
+}
+
 #board-container h1 {
   text-align: center;
   font-weight: bold;
@@ -252,6 +264,9 @@ main {
   gap: 1rem;
 }
 
+#delete-post-button {
+  background-color: var(--color-grey);
+}
 #delete-board-button {
   background-color: var(--color-red-opaque);
 }
@@ -287,6 +302,10 @@ main {
     cursor: pointer;
   }
 
+  #delete-post-button:hover {
+    background-color: var(--color-grey);
+    cursor: pointer;
+  }
   #delete-board-button:hover {
     background-color: var(--color-red);
     cursor: pointer;
