@@ -1,7 +1,7 @@
 import DeletePostButton from './DeletePostButton.js';
 import { useParams } from 'react-router-dom';
 
-const Post = ({ post, user, boardOwnerId }) => {
+const Post = ({ post, user, boardOwnerId, updateBoardFunc }) => {
   const { boardId } = useParams();
 
   return (
@@ -9,7 +9,11 @@ const Post = ({ post, user, boardOwnerId }) => {
       <div id='post-header'>
         <h1>{post.name}</h1>
         {user && user.uid === boardOwnerId && (
-          <DeletePostButton boardId={boardId} postId={post.postId} />
+          <DeletePostButton
+            boardId={boardId}
+            postId={post.postId}
+            updateBoardFunc={updateBoardFunc}
+          />
         )}
       </div>
       <h4>{post.description}</h4>

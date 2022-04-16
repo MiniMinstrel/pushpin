@@ -1,15 +1,13 @@
 import { FaTrash } from 'react-icons/fa';
 import { deletePost } from '../firebase/firebase-db';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-const DeletePostButton = ({ boardId, postId }) => {
-  const navigate = useNavigate();
+const DeletePostButton = ({ boardId, postId, updateBoardFunc }) => {
 
   const handleSubmit = async () => {
-    await deletePost(boardId, postId);
-    navigate('/dashboard');
+    deletePost(boardId, postId);
+    await updateBoardFunc();
   };
 
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +17,7 @@ const DeletePostButton = ({ boardId, postId }) => {
   return (
     <>
       <div id='delete-post-button' onClick={handleShow}>
-        <FaTrash style={{width: '1.2rem', height: '1.2rem'}}/>
+        <FaTrash style={{ width: '1.2rem', height: '1.2rem' }} />
       </div>
 
       <Modal className='modal' show={showModal} onHide={handleClose}>
