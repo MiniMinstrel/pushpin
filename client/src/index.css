@@ -271,6 +271,16 @@ main {
   background-color: var(--color-red-opaque);
 }
 
+#footer {
+  position: absolute;
+  background-color: var(--color-grey);
+  bottom: 0;
+  text-align: center;
+  padding-top: 20px;
+  width: 100%;
+  height: 4rem;
+}
+
 /* ========================================= */
 /*               Media Queries               */
 /* ========================================= */

@@ -32,7 +32,7 @@ const createPost = (boardId, name, description) => {
   });
 };
 
-const deletePost = (boardId, postId) => {
+const deletePost = async (boardId, postId) => {
   const docRef = doc(db, `boards/${boardId}/posts/${postId}`);
   deleteDoc(docRef);
 };

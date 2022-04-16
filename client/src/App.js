@@ -33,6 +33,9 @@ function App() {
           </Routes>
         </main>
       </Router>
+
+      <footer id="footer"> © 2022 Push Pin LLC. All Rights Reserved. </footer>
+
     </>
   );
 }
