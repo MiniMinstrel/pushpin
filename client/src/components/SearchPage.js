@@ -2,6 +2,7 @@ import { getBoardsByQueryContains } from '../firebase/firebase-db';
 import BoardPreviewButton from './BoardPreviewButton';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import FadeIn from 'react-fade-in';
 
 const SearchPage = () => {
   const [boards, setBoards] = useState([]);
@@ -17,6 +18,7 @@ const SearchPage = () => {
   }, [searchQuery]);
 
   return (
+    <FadeIn>
     <div id='search-page-container'>
       <h2>
         Showing search results for <span className='orange'>{searchQuery}</span>
@@ -27,6 +29,7 @@ const SearchPage = () => {
         })}
       </div>
     </div>
+    </FadeIn>
   );
 };
 
