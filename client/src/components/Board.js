@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Post from './Post';
 import DeleteBoardButton from './DeleteBoardButton';
 import { AiFillEdit } from 'react-icons/ai';
+import FadeIn from 'react-fade-in';
 
 const Board = ({ user }) => {
   const [board, setBoard] = useState({});
@@ -41,6 +42,7 @@ const Board = ({ user }) => {
   }, [user, boardId, navigate]);
 
   return (
+    <FadeIn>
     <div id='board-container'>
       <h1 id='board-name'>{board.name}</h1>
       <p id='board-owner'>
@@ -78,6 +80,7 @@ const Board = ({ user }) => {
         )}
       </div>
     </div>
+    </FadeIn>
   );
 };
 
