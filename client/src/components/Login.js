@@ -1,12 +1,14 @@
 import { FaGoogle } from 'react-icons/fa';
 import { signUserInWithGooglePopup } from '../firebase/firebase-auth';
 import { Navigate } from 'react-router-dom';
+import FadeIn from 'react-fade-in';
 
 const Login = ({ user }) => {
   // go to dashboard if user already logged in
   if (user) return <Navigate to='/dashboard' replace={true} />;
 
   return (
+    <FadeIn>
     <div id='login'>
       <h1>Push Pin - Your Virtual Bulletin Board</h1>
       <img
@@ -21,6 +23,7 @@ const Login = ({ user }) => {
         Sign in with Google
       </button>
     </div>
+    </FadeIn>
   );
 };
 
