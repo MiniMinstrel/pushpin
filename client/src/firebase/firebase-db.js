@@ -204,7 +204,7 @@ const getBoardsByQueryContains = async (queryParam) => {
     const boardData = board.data();
     if (
       boardData.ownerName.toLowerCase().search(queryParam) !== -1 ||
-      boardData.nametoLowerCase().search(queryParam) !== -1
+      boardData.name.toLowerCase().search(queryParam) !== -1
     ) {
       const boardObj = {
         boardId: board.id,
