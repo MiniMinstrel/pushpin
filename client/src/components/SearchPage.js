@@ -7,12 +7,12 @@ const SearchPage = () => {
   const [boards, setBoards] = useState([]);
   const { searchQuery } = useParams();
 
-  const fetchBoards = async () => {
-    const boardsRes = await getBoardsByQueryContains(searchQuery);
-    setBoards([...boardsRes]);
-  };
-
   useEffect(() => {
+    const fetchBoards = async () => {
+      const boardsRes = await getBoardsByQueryContains(searchQuery);
+      setBoards([...boardsRes]);
+    };
+
     fetchBoards();
   }, [searchQuery]);
 
