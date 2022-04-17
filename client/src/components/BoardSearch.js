@@ -1,4 +1,4 @@
-import { FiSearch } from 'react-icons/fi';
+import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const BoardSearch = () => {
@@ -14,7 +14,7 @@ const BoardSearch = () => {
   return (
     <div id='board-search-container'>
       <input type='text' placeholder='search boards...' id='search-input' />
-      <FiSearch id='search-submit-button' onClick={onSearchSubmit} />
+      <FaSearch id='search-submit-button' onClick={onSearchSubmit} />
     </div>
   );
 };

@@ -96,7 +96,7 @@ nav img {
   color: var(--color-black);
   height: 2.5rem;
   width: 2.5rem;
-  padding: 0.4rem;
+  padding: 0.55rem;
   background-color: var(--color-orange);
   transition: all 0.3s ease-in-out;
   border-top-right-radius: 0.5rem;
@@ -195,7 +195,7 @@ main {
   background-color: var(--color-orange-opaque);
   flex-direction: column;
   padding: 2rem 1rem;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: all 0.3s ease-in-out;
 }
 
