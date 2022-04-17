@@ -12,22 +12,22 @@ const Board = ({ user }) => {
   const { boardId } = useParams();
   const navigate = useNavigate();
 
-  const fetchBoard = async () => {
-    const boardRes = await getBoard(boardId);
-    return boardRes;
-  };
-
   const updateBoard = async () => {
     const boardRes = await getBoard(boardId);
     setBoard({ ...boardRes });
   };
 
-  const checkUser = async () => {
-    const userState = await user;
-    if (!userState) navigate('/');
-  };
-
   useEffect(() => {
+    const fetchBoard = async () => {
+      const boardRes = await getBoard(boardId);
+      return boardRes;
+    };
+
+    const checkUser = async () => {
+      const userState = await user;
+      if (!userState) navigate('/');
+    };
+
     checkUser();
 
     let isMounted = true;
@@ -38,7 +38,7 @@ const Board = ({ user }) => {
     return () => {
       isMounted = false;
     };
-  }, [user]);
+  }, [user, boardId, navigate]);
 
   return (
     <div id='board-container'>
