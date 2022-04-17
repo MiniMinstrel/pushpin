@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { getBoardsByOwnerIdNoPosts } from '../firebase/firebase-db';
 import { useState, useEffect } from 'react';
-import CreateUserButton from './CreateBoardButton';
+import CreateBoardButton from './CreateBoardButton';
 import BoardPreviewButton from './BoardPreviewButton';
 
 const Dashboard = ({ user }) => {
@@ -27,11 +27,11 @@ const Dashboard = ({ user }) => {
         magic happens!
       </p>
 
-      <div id='dashboard-boards'>
+      <div className='boards-grid'>
         {boards.map((board) => {
           return <BoardPreviewButton key={board.boardId} board={board} />;
         })}
-        <CreateUserButton user={user} />
+        <CreateBoardButton user={user} />
       </div>
     </div>
   );

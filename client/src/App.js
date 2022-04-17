@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import UserDashboard from './components/Dashboard';
 import Login from './components/Login';
 import Board from './components/Board';
+import SearchPage from './components/SearchPage';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -23,8 +24,16 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Login user={user} />} />
-            {user && <Route path='/dashboard' element={<UserDashboard user={user} />} />}
+            {user && (
+              <Route
+                path='/dashboard'
+                element={<UserDashboard user={user} />}
+              />
+            )}
             <Route path='/boards/:boardId' element={<Board user={user} />} />
+            {user && (
+              <Route path='/search/:searchQuery' element={<SearchPage />} />
+            )}
             <Route path='*' element={<Navigate to='/' replace={true} />} />
           </Routes>
         </main>
