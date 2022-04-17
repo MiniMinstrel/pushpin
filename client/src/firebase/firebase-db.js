@@ -15,8 +15,8 @@ const db = getFirestore(firebaseApp);
 const boardsCollectionRef = collection(db, 'boards');
 
 // ==============================================
-// creates a board in Firebase with input 
-// parameters representing the name of the board 
+// creates a board in Firebase with input
+// parameters representing the name of the board
 // owner, the id number of the owner, and the
 // name of the board respectively
 // ==============================================
@@ -31,8 +31,8 @@ const createBoard = async (ownerName, ownerId, name) => {
 };
 
 // ==============================================
-// creates a post inside of the board with the 
-// matching boardId in Firebase with the input 
+// creates a post inside of the board with the
+// matching boardId in Firebase with the input
 // parameters representing the name of the post
 // and the post description
 // ==============================================
@@ -45,7 +45,7 @@ const createPost = (boardId, name, description) => {
 };
 
 // ==============================================
-// deletes the post with the matching postId 
+// deletes the post with the matching postId
 // inside the board with the matching boardId
 // ==============================================
 const deletePost = (boardId, postId) => {
@@ -77,7 +77,7 @@ const deleteBoard = async (boardId) => {
 // gets a board from Firebase with the matching
 // boardId and returns a structured object
 // containing the board id, board name, board
-// owner name, board owner id, and a list of 
+// owner name, board owner id, and a list of
 // post objects contained within the board each
 // containing the post id, post name, and post
 // description
@@ -104,7 +104,7 @@ const getBoard = async (boardId) => {
 
 // ==============================================
 // gets all boards whose ownerId property matches
-// the input ownerId and returns a board object 
+// the input ownerId and returns a board object
 // that contains the board posts as well
 // ==============================================
 const getBoardsByOwnerId = async (ownerId) => {
@@ -149,7 +149,7 @@ const getBoardsByOwnerIdNoPosts = async (ownerId) => {
 //
 // in general, this fetches significantly less
 // items than getBoardsByQueryContains since
-// firebase does all the board filtering 
+// firebase does all the board filtering
 // themselves
 // ==============================================
 const getBoardsByQueryExact = async (queryParam) => {
@@ -193,7 +193,7 @@ const getBoardsByQueryExact = async (queryParam) => {
 // gets all the boards whose name and/or owner
 // contains the queryParam and returns board
 // objects without posts
-// 
+//
 // this initially grabs EVERY single board from
 // Firebase and filters afterward (not optimal)
 // ==============================================
@@ -203,8 +203,8 @@ const getBoardsByQueryContains = async (queryParam) => {
   boardsRes.forEach((board) => {
     const boardData = board.data();
     if (
-      boardData.ownerName.search(queryParam) !== -1 ||
-      boardData.name.search(queryParam) !== -1
+      boardData.ownerName.toLowerCase().search(queryParam) !== -1 ||
+      boardData.nametoLowerCase().search(queryParam) !== -1
     ) {
       const boardObj = {
         boardId: board.id,
