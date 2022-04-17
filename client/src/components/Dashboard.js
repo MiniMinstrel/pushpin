@@ -27,7 +27,7 @@ const Dashboard = ({ user }) => {
         magic happens!
       </p>
 
-      <div id='dashboard-boards'>
+      <div className='boards-grid'>
         {boards.map((board) => {
           return <BoardPreviewButton key={board.boardId} board={board} />;
         })}
