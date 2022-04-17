@@ -71,19 +71,39 @@ nav img {
   height: 3rem;
 }
 
-nav input[type='text'] {
+#board-search-container {
+  display: flex;
+  /* gap: 0.4rem; */
+  align-items: center;
+  justify-content: center;
+}
+
+#board-search-container input[type='text'] {
   font-family: 'Poppins', sans-serif;
   color: var(--color-black);
   font-size: 1rem;
   padding: 0.5rem;
   border: none;
   background-color: var(--color-white);
-  border-radius: 0.5rem;
   font-weight: bold;
-  width: 12rem;
+  height: 2.5rem;
+  width: 10rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
-nav input[type='text']:focus {
+#search-submit-button {
+  color: var(--color-black);
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.4rem;
+  background-color: var(--color-orange);
+  transition: all 0.3s ease-in-out;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+#board-search-container input[type='text']:focus {
   outline: solid 0.2rem var(--color-orange);
 }
 
@@ -175,7 +195,7 @@ main {
 
 .board-preview-button h3 {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .create-button {
@@ -307,6 +327,11 @@ main {
     cursor: pointer;
   }
 
+  #search-submit-button:hover {
+    background-color: var(--color-orange-dark);
+    cursor: pointer;
+  }
+
   #navbar-profile:hover {
     border-color: var(--color-orange);
     cursor: pointer;
@@ -337,7 +362,7 @@ main {
     background-color: var(--color-red);
   }
 
-  nav input[type='text'] {
+  #board-search-container input[type='text'] {
     width: 15rem;
   }
 
@@ -357,7 +382,7 @@ main {
 }
 
 @media (min-width: 1000px) {
-  nav input[type='text'] {""
+  #board-search-container input[type='text'] {
     width: 25rem;
   }
 

@@ -144,7 +144,8 @@ const getBoardsByOwnerIdNoPosts = async (ownerId) => {
 
 // ==============================================
 // gets all the boards whose name and/or owner
-// name EXACTLY match the queryParam
+// name EXACTLY match the queryParam and returns
+// board objects without posts
 //
 // in general, this fetches significantly less
 // items than getBoardsByQueryContains since
@@ -190,7 +191,8 @@ const getBoardsByQueryExact = async (queryParam) => {
 
 // ==============================================
 // gets all the boards whose name and/or owner
-// contains the queryParam
+// contains the queryParam and returns board
+// objects without posts
 // 
 // this initially grabs EVERY single board from
 // Firebase and filters afterward (not optimal)

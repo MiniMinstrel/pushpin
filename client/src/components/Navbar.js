@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { signUserOut } from '../firebase/firebase-auth';
 import { useNavigate } from 'react-router-dom';
+import BoardSearch from './BoardSearch';
 
 const Navbar = ({ user }) => {
   const [showProfilePopup, setShowProfilePopup] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = ({ user }) => {
     <>
       <nav>
         <img onClick={() => navigate('/')} src='./logo.png' alt='Push Pin' />
-        <input type='text' placeholder='search boards...' />
+        <BoardSearch />
         <NavbarProfile user={user} onClickFunc={handleShow} />
       </nav>
 

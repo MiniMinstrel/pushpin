@@ -30,6 +30,7 @@ function App() {
               />
             )}
             <Route path='/boards/:boardId' element={<Board user={user} />} />
+            <Route path='/search/:searchQuery' element={<p>it works!</p>} />
             <Route path='*' element={<Navigate to='/' replace={true} />} />
           </Routes>
         </main>
