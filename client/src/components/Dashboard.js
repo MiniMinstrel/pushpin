@@ -3,6 +3,7 @@ import { getBoardsByOwnerIdNoPosts } from '../firebase/firebase-db';
 import { useState, useEffect } from 'react';
 import CreateBoardButton from './CreateBoardButton';
 import BoardPreviewButton from './BoardPreviewButton';
+import FadeIn from 'react-fade-in';
 
 const Dashboard = ({ user }) => {
   const [boards, setBoards] = useState([]);
@@ -20,6 +21,7 @@ const Dashboard = ({ user }) => {
   if (!user) return <Navigate to='/' replace={true} />;
 
   return (
+    <FadeIn>
     <div id='dashboard'>
       <p>
         Welcome to your dashboard,{' '}
@@ -34,6 +36,7 @@ const Dashboard = ({ user }) => {
         <CreateBoardButton user={user} />
       </div>
     </div>
+    </FadeIn>
   );
 };
 
