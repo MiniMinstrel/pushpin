@@ -23,7 +23,12 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Login user={user} />} />
-            {user && <Route path='/dashboard' element={<UserDashboard user={user} />} />}
+            {user && (
+              <Route
+                path='/dashboard'
+                element={<UserDashboard user={user} />}
+              />
+            )}
             <Route path='/boards/:boardId' element={<Board user={user} />} />
             <Route path='*' element={<Navigate to='/' replace={true} />} />
           </Routes>

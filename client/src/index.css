@@ -3,6 +3,7 @@
 :root {
   --color-white: #ffffff;
   --color-black: #17181f;
+  --color-black-opaque: #17181f77;
   --color-orange: #e38c64;
   --color-orange-dark: #c47957;
   --color-orange-opaque: rgba(227, 140, 100, 0.7);
@@ -43,12 +44,13 @@ button {
 }
 
 ::placeholder {
-  color: var(--color-black);
+  color: var(--color-black-opaque);
 }
 
 .modal {
   font-weight: bold;
 }
+
 /* ========================================= */
 /*                    Navbar                 */
 /* ========================================= */
@@ -355,7 +357,7 @@ main {
 }
 
 @media (min-width: 1000px) {
-  nav input[type='text'] {
+  nav input[type='text'] {""
     width: 25rem;
   }
 
