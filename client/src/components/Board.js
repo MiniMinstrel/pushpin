@@ -71,7 +71,7 @@ const Board = ({ user }) => {
           <>
             <CreatePostButton
               boardId={board.boardId}
-              onClickFunc={updateBoard}
+              updateBoardFunc={updateBoard}
             />
             <DeleteBoardButton boardId={board.boardId} />
           </>
