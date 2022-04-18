@@ -21,7 +21,7 @@ function App() {
       <Router>
         {user && <Navbar user={user} />}
 
-        <main>
+        <main id="body">
           <Routes>
             <Route path='/' element={<Login user={user} />} />
             {user && (
@@ -37,6 +37,9 @@ function App() {
             <Route path='*' element={<Navigate to='/' replace={true} />} />
           </Routes>
         </main>
+
+        <footer id="footer"> 2022 Push Pin LLC. All Rights Reserved. </footer>
+
       </Router>
     </>
   );
