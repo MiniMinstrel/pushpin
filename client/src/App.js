@@ -38,7 +38,7 @@ function App() {
           </Routes>
         </main>
 
-        <footer id="footer"> © 2022 Push Pin LLC. All Rights Reserved. </footer>
+        <footer id="footer"> 2022 Push Pin LLC. All Rights Reserved. </footer>
 
       </Router>
     </>
