@@ -328,7 +328,7 @@ main {
 }
 
 #footer {
-  position: absolute;
+  position: sticky;
   background-color: var(--color-black);
   bottom: 0px;
   text-align: center;
