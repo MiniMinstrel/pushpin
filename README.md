@@ -10,7 +10,7 @@ a cluttered and unreliable physical bulletin board, PushPin digitalizes the proc
 and provides streamline access to information for students. Students and faculty will
 be able to post and search up information with just the push of a button.</p> 
 
-<p>Created for UF's CEN3031 final project, the goal is to help students and teachers dissemate information quickly and efficiently. In addition to that, other organiziations can use it to allow students to stay up to date with events happening around UF's campus</p>
+<p>Created for UF's CEN3031 final project, the goal is to help students and teachers disseminate  information quickly and efficiently. In addition to that, other organizations  can use it to allow students to stay up to date with events happening around UF's campus</p>
 
 
 ## 🔮 How to run
